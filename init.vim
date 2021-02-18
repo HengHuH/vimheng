@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
+set background=dark
 colorscheme solarized
 
 set number
