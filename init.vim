@@ -1,15 +1,22 @@
+syntax on
+
+
 call plug#begin('~/.vim/plugged')
+Plug 'flazz/vim-colorschemes'
 Plug 'Yggdroot/LeaderF'   
 Plug 'justinmk/vim-dirvish'
 Plug 'vim-airline/vim-airline'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
+colorscheme solarized
 
 set number
+set ts=4
 
 set guifont=JetBrainsMono-Regular:h12
 
+" LeaderF
 let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 noremap <c-n> :LeaderfMru<cr>
@@ -43,7 +50,6 @@ let g:gutentags_cache_dir = s:vim_tags
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-
 " 检测 ~/.cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
