@@ -1,8 +1,14 @@
 syntax on
 
-
 call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
+
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-syntax'
+Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
+Plug 'sgur/vim-textobj-parameter'
+
 Plug 'Yggdroot/LeaderF'   
 Plug 'justinmk/vim-dirvish'
 Plug 'vim-airline/vim-airline'
@@ -15,7 +21,8 @@ colorscheme solarized
 set number
 set ts=4
 
-set guifont=JetBrainsMono-Regular:h12
+" set guifont=JetBrainsMono-Regular:h12
+set guifont=Inconsolata-Regular:h12
 
 " LeaderF
 let g:Lf_ShortcutF = '<c-p>'
