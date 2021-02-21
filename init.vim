@@ -36,7 +36,7 @@ source $VIMRUNTIME/menu.vim
 " Set gui font
 if g:isGUI
 	if g:iswindows
-		set guifont=Inconsolata-Regular:h12
+		set guifont=JetBrains\ Mono
 	elseif g:ismac
 		set guifont=Inconsolata-Regular:h12
 	endif
