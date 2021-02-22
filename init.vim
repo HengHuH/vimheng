@@ -1,3 +1,21 @@
+if get(s:, 'loaded', 0) != 0
+    finish
+else
+    let s:loaded = 1
+endif
+
+" 取得本文件所在的目录
+
+let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
+" 定义一个命令来加载文件
+command! -nargs=1 LoadScript exec 'so '.s:home.'/'.'<args>'
+
+" 将项目目录加入 runtimepath
+exec 'set rtp+='.s:home
+
+set rtp+=~/.vim
+
 syntax on
 
 " Plugins Install 
@@ -16,9 +34,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
-" source global.vim
-source settings.vim
-" source keymapping.vim
+LoadScript global.vim
+LoadScript settings.vim
+LoadScript keymapping.vim
 
 " LeaderF
 let g:Lf_ShortcutF = '<c-p>'
