@@ -1,54 +1,5 @@
 syntax on
 
-" set some global variable
-let g:iswindows = 0
-let g:islinux = 0
-let g:ismac = 0
-
-if(has('win32') || has('win64'))
-	let g:iswindows = 1
-elseif(has('mac'))
-	let g:ismac = 1
-elseif(has('unix'))
-	let g:islinux = 1
-endif
-
-if has('gui_running')
-	let g:isGUI=1
-else
-	let g:isGUI=0
-endif
-
-set encoding=utf-8
-set fileencodings=utf-8,chinese,latin-1,gbk,gb18030,gk2312
-if g:iswindows
-	set fileencoding=utf-8
-else
-	set fileencoding=utf-8
-endif
-
-" 解决 Window gvim 菜单乱码
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
-" Set gui font
-if g:isGUI
-	if g:iswindows
-		" set guifont=JetBrains\ Mono:h10
-        set guifont=Inconsolata:h9
-        set guifontwide=NSimSun
-        set linespace=0
-	elseif g:ismac
-		set guifont=Inconsolata-Regular:h12
-	endif
-endif	
-
-set number
-" Tab
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
 " Plugins Install 
 call plug#begin('~/vimfiles/plugged')
 Plug 'flazz/vim-colorschemes'
@@ -65,9 +16,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
-" Color Scheme
-set background=dark
-colorscheme solarized
+" source global.vim
+source settings.vim
+" source keymapping.vim
 
 " LeaderF
 let g:Lf_ShortcutF = '<c-p>'
