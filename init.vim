@@ -27,7 +27,7 @@ else
 	set fileencoding=utf-8
 endif
 
-" è§£å†³ Window gvim èœå•ä¹±ç 
+" ½â¾ö Window gvim ²Ëµ¥ÂÒÂë
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
@@ -41,7 +41,10 @@ if g:isGUI
 endif	
 
 set number
-set ts=4
+" Tab
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Plugins Install 
 call plug#begin('~/vimfiles/plugged')
@@ -83,22 +86,22 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
 set tags=./.tags;,.tags
 
-" gutentags æœç´¢å·¥ç¨‹ç›®å½•çš„æ ‡å¿—ï¼Œç¢°åˆ°è¿™äº›æ–‡ä»¶/ç›®å½•åå°±åœæ­¢å‘ä¸Šä¸€çº§ç›®å½•é€’å½’
+" gutentags ËÑË÷¹¤³ÌÄ¿Â¼µÄ±êÖ¾£¬Åöµ½ÕâĞ©ÎÄ¼ş/Ä¿Â¼Ãû¾ÍÍ£Ö¹ÏòÉÏÒ»¼¶Ä¿Â¼µİ¹é
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 
-" æ‰€ç”Ÿæˆçš„æ•°æ®æ–‡ä»¶çš„åç§°
+" ËùÉú³ÉµÄÊı¾İÎÄ¼şµÄÃû³Æ
 let g:gutentags_ctags_tagfile = '.tags'
 
-" å°†è‡ªåŠ¨ç”Ÿæˆçš„ tags æ–‡ä»¶å…¨éƒ¨æ”¾å…¥ ~/.cache/tags ç›®å½•ä¸­ï¼Œé¿å…æ±¡æŸ“å·¥ç¨‹ç›®å½•
+" ½«×Ô¶¯Éú³ÉµÄ tags ÎÄ¼şÈ«²¿·ÅÈë ~/.cache/tags Ä¿Â¼ÖĞ£¬±ÜÃâÎÛÈ¾¹¤³ÌÄ¿Â¼
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 
-" é…ç½® ctags çš„å‚æ•°
+" ÅäÖÃ ctags µÄ²ÎÊı
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
-" æ£€æµ‹ ~/.cache/tags ä¸å­˜åœ¨å°±æ–°å»º
+" ¼ì²â ~/.cache/tags ²»´æÔÚ¾ÍĞÂ½¨
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
