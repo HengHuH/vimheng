@@ -15,6 +15,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group += ['tags', 'airline']
 	let g:bundle_group += ['leaderf']
     let g:bundle_group += ['popmenu', 'dict']
+    let g:bundle_group += ['markdown']
 endif
 
 
@@ -369,6 +370,7 @@ if index(g:bundle_group, 'leaderf') >= 0
 	endif
 endif
 
+
 "----------------------------------------------------------------------
 " vim-auto-popmenu 超轻量自动补全插件
 "----------------------------------------------------------------------
@@ -387,6 +389,7 @@ if index(g:bundle_group, 'popmenu') >= 0
     set shortmess+=c
 endif
 
+
 "----------------------------------------------------------------------
 " Dictionary
 "----------------------------------------------------------------------
@@ -396,6 +399,16 @@ if index(g:bundle_group, 'dict') >= 0
         \ '~/.vim/dict'
         \]
     let g:vim_dict_config = {'html':'html,javascript,css', 'markdown':'text'}
+endif
+
+
+"----------------------------------------------------------------------
+" Markdown
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'markdown') >= 0
+    Plug 'plasticboy/vim-markdown'
+
+    let g:vim_markdown_math = 1
 endif
 
 call plug#end()
