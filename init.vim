@@ -5,7 +5,6 @@ else
 endif
 
 " 取得本文件所在的目录
-
 let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " 定义一个命令来加载文件
@@ -19,7 +18,7 @@ set rtp+=~/.vim
 syntax on
 
 " Plugins Install 
-call plug#begin('~/vimfiles/plugged')
+call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
 
 Plug 'kana/vim-textobj-user'

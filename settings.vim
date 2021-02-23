@@ -1,6 +1,6 @@
 " Color Scheme
 set background=dark
-colorscheme solarized
+colorscheme solarized_heng
 
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1,gbk,gb18030,gk2312
@@ -18,7 +18,7 @@ source $VIMRUNTIME/menu.vim
 if g:isGUI
 	if g:iswindows
 		" set guifont=JetBrains\ Mono:h10
-        set guifont=Inconsolata:h9
+        set guifont=Inconsolata:h10
         set guifontwide=NSimSun
         set linespace=0
 	elseif g:ismac
