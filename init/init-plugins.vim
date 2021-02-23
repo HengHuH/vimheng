@@ -14,7 +14,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
-    let g:bundle_group += ['popmenu']
+    let g:bundle_group += ['popmenu', 'dict']
 endif
 
 
@@ -340,8 +340,12 @@ if index(g:bundle_group, 'popmenu') >= 0
 
     " 禁止在下方显示一些啰嗦的提示
     set shortmess+=c
+endif
 
-    " 英文单词字典
+"----------------------------------------------------------------------
+" Dictionary
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'dict') >= 0
     Plug 'skywind3000/vim-dict'
     let g:vim_dict_dict = [
         \ '~/.vim/dict'
