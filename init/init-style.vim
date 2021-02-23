@@ -23,7 +23,7 @@ set signcolumn=yes
 set showtabline=2
 
 " 设置显示制表符等隐藏字符
-set list
+" set list
 
 " 右下角显示命令
 set showcmd
