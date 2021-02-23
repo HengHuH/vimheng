@@ -12,7 +12,7 @@
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
+	let g:bundle_group += ['tags', 'airline']
 	let g:bundle_group += ['leaderf']
     let g:bundle_group += ['popmenu', 'dict']
 endif
@@ -94,7 +94,7 @@ if index(g:bundle_group, 'basic') >= 0
     " 用于在侧边符号栏显示 git/svn 的 diff
 	Plug 'mhinz/vim-signify'
     " Git 支持
-	Plug 'tpope/vim-fugitive'
+	" Plug 'tpope/vim-fugitive'
 
     " 默认不显示 startify
 	let g:startify_disable_at_vimenter = 0
@@ -118,8 +118,15 @@ endif
 " 增强插件
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'enhanced') >= 0
+    " 用 v 选中一个区域后，ALT_+/- 按分隔符扩大/缩小选区
+    Plug 'terryma/vim-expand-region'
+
     " 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
+
+    " ALT_+/- 用于按分隔符扩大缩小 v 选区
+    map <m-=> <Plug>(expand_region_expand)
+    map <m--> <Plug>(expand_region_shrink)
 endif
 
 "----------------------------------------------------------------------
@@ -216,6 +223,16 @@ if index(g:bundle_group, 'airline') >= 0
 	let g:airline#extensions#fugitiveline#enabled = 0
 	let g:airline#extensions#csv#enabled = 0
 	let g:airline#extensions#vimagit#enabled = 0
+endif
+
+
+"----------------------------------------------------------------------
+" echodoc：搭配 YCM/deoplete 在底部显示函数参数
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'echodoc') >= 0
+	Plug 'Shougo/echodoc.vim'
+	set noshowmode
+	let g:echodoc#enable_at_startup = 1
 endif
 
 
