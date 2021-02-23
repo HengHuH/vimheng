@@ -14,6 +14,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
+    let g:bundle_group += ['popmenu']
 endif
 
 
@@ -321,6 +322,31 @@ if index(g:bundle_group, 'leaderf') >= 0
 		" ALT+n 匹配 buffer
 		noremap <m-n> :CtrlPBuffer<cr>
 	endif
+endif
+
+"----------------------------------------------------------------------
+" vim-auto-popmenu 超轻量自动补全插件
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'popmenu') >= 0
+    Plug 'skywind3000/vim-auto-popmenu'
+    " 设定需要生效的文件类型，如果是 "*" 的话，代表所有类型
+    let g:apc_enable_ft = {"*":1}
+
+    " 设定从字典文件以及当前打开的文件里收集补全单词，详情看 ':help cpt'
+    set cpt=.,k,w,b
+
+    " 不要自动选中第一个选项。
+    set completeopt=menu,menuone,noselect
+
+    " 禁止在下方显示一些啰嗦的提示
+    set shortmess+=c
+
+    " 英文单词字典
+    Plug 'skywind3000/vim-dict'
+    let g:vim_dict_dict = [
+        \ '~/.vim/dict'
+        \]
+    let g:vim_dict_config = {'html':'html,javascript,css', 'markdown':'text'}
 endif
 
 call plug#end()
