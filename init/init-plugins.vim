@@ -44,6 +44,14 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/plugged'))
 " 全文快速移动，<leader><leader>f{char} 即可触发
 Plug 'easymotion/vim-easymotion'
 
+" vim-surround,the plugin is used to work with surrounding characters like
+" parentheses, brackets, quotes, and XML tags.
+" example: cs cst;ds;ys
+Plug 'tpope/vim-surround'
+
+" 注释 gc/gcc
+Plug 'tpope/vim-commentary'
+
 " 文件浏览器，代替 netrw
 Plug 'justinmk/vim-dirvish'
 
