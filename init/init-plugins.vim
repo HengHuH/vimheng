@@ -85,11 +85,22 @@ function! s:setup_dirvish()
 	call search(name, 'wc')
 	noremap <silent><buffer> ~ :Dirvish ~<cr>
 	noremap <buffer> % :e %
+
+    autocmd FileType dirvish
+    \  nnoremap <silent><buffer> t :call dirvish#open('tabedit', 0)<CR>
+    \ |xnoremap <silent><buffer> t :call dirvish#open('tabedit', 0)<CR>
+endfunc
+
+" dirvish up 的默认快捷键 - 和【前一行首】冲突，map 到 Alt-
+function! s:keymap_dirvish()
+    nunmap -
+    nmap <m--> <Plug>(dirvish_up)
 endfunc
 
 augroup MyPluginSetup
 	autocmd!
 	autocmd FileType dirvish call s:setup_dirvish()
+    autocmd VimEnter * nested call s:keymap_dirvish()
 augroup END
 
 "----------------------------------------------------------------------
@@ -104,7 +115,6 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'mhinz/vim-signify'
     " Git 支持
 	" Plug 'tpope/vim-fugitive'
-
     " 默认不显示 startify
 	let g:startify_disable_at_vimenter = 0
 	let g:startify_session_dir = '~/.vim/session'
