@@ -102,7 +102,7 @@ if index(g:bundle_group, 'basic') >= 0
     " 展示开始画面，显示最近编辑过的文件
 	Plug 'mhinz/vim-startify'
     " 一次性安装一大堆 colorscheme
-    Plug 'flazz/vim-colorschemes'
+    " Plug 'flazz/vim-colorschemes'
     " 用于在侧边符号栏显示 git/svn 的 diff
 	Plug 'mhinz/vim-signify'
     " Git 支持
@@ -132,6 +132,10 @@ if index(g:bundle_group, 'enhanced') >= 0
     " 用 v 选中一个区域后，ALT_+/- 按分隔符扩大/缩小选区
     Plug 'terryma/vim-expand-region'
 
+    " ALT_+/- 用于按分隔符扩大缩小 v 选区
+    map <m-=> <Plug>(expand_region_expand)
+    map <m--> <Plug>(expand_region_shrink)
+
     " 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
 
@@ -140,7 +144,6 @@ if index(g:bundle_group, 'enhanced') >= 0
 
     " Start interactive EasyAlign in visual mode (e.g. vipga)
     xmap ga <Plug>(EasyAlign)
-
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
     nmap ga <Plug>(EasyAlign)
 
@@ -151,10 +154,6 @@ if index(g:bundle_group, 'enhanced') >= 0
 
     " 注释 gc/gcc
     Plug 'tpope/vim-commentary'
-
-    " ALT_+/- 用于按分隔符扩大缩小 v 选区
-    map <m-=> <Plug>(expand_region_expand)
-    map <m--> <Plug>(expand_region_shrink)
 endif
 
 "----------------------------------------------------------------------
@@ -253,7 +252,7 @@ if index(g:bundle_group, 'filetypes') >= 0
 	Plug 'vim-python/python-syntax', { 'for': ['python'] }
 
 	" rust 语法增强
-	" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 	" vim org-mode 
 	" Plug 'jceb/vim-orgmode', { 'for': 'org' }
