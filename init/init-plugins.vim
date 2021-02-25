@@ -44,14 +44,6 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/plugged'))
 " 全文快速移动，<leader><leader>f{char} 即可触发
 Plug 'easymotion/vim-easymotion'
 
-" vim-surround,the plugin is used to work with surrounding characters like
-" parentheses, brackets, quotes, and XML tags.
-" example: cs cst;ds;ys
-Plug 'tpope/vim-surround'
-
-" 注释 gc/gcc
-Plug 'tpope/vim-commentary'
-
 " 文件浏览器，代替 netrw
 Plug 'justinmk/vim-dirvish'
 
@@ -142,6 +134,23 @@ if index(g:bundle_group, 'enhanced') >= 0
 
     " 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
+
+    " 对齐
+    Plug 'junegunn/vim-easy-align'
+
+    " Start interactive EasyAlign in visual mode (e.g. vipga)
+    xmap ga <Plug>(EasyAlign)
+
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
+
+    " vim-surround,the plugin is used to work with surrounding characters like
+    " parentheses, brackets, quotes, and XML tags.
+    " example: cs cst;ds;ys
+    Plug 'tpope/vim-surround'
+
+    " 注释 gc/gcc
+    Plug 'tpope/vim-commentary'
 
     " ALT_+/- 用于按分隔符扩大缩小 v 选区
     map <m-=> <Plug>(expand_region_expand)
