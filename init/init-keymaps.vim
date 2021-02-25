@@ -119,6 +119,7 @@ noremap <silent><leader>tr :call Tab_MoveRight()<cr>
 noremap <silent><m-left> :call Tab_MoveLeft()<cr>
 noremap <silent><m-right> :call Tab_MoveRight()<cr>
 
+" 上一个 Tab
 if has('gui_running')
     " set winaltkey=no
     " set macmeta

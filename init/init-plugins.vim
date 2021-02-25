@@ -2,7 +2,7 @@
 " init-plugins.vim
 "
 " Create by Heng on 2021/02/23, clone from skywind300/vim-init
-" Last Modified: 2021/02/23
+" Last Modified: 2021/02/24
 "===============================================================================
 " vim: set ts=4 sw=4 tw=78 et :
 
